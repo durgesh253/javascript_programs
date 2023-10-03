@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="count"></p>
+    <button onclick="return incement()">Increment</button>
+    <button onclick="return Decrement()">Decrement</button>
+    <script>
+      let  counter = document.getElementById("count");
+        let count = 0;
+
+       function  incement(){
+            count++;
+            counter.innerText = count;
+            return false;
+  
+
+        }
+        function Decrement(){
+            count--;
+            counter.innerText  = count;
+            return false;
+        }
+
+    </script>
+    
+</body>
+</html>

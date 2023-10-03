@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- This code is an implementation of the game "Snake Water Gun" using HTML, CSS, and JavaScript. Here's a breakdown of each section of the code:
+
+The first section of the code is the HTML structure, which contains the title, a heading, buttons to select the player's weapon, and a paragraph element to display the game result.
+
+The second section of the code is a JavaScript function named play, which is called whenever the player clicks on a weapon button. The play function takes the player's weapon choice as an argument.
+
+Inside the play function, an array choices is created that contains the three possible weapons: 'snake', 'water', and 'gun'.
+
+The computer's weapon choice is generated randomly using the Math.floor and Math.random functions to select a random index of the choices array.
+
+The game logic is then implemented using a series of conditional statements (if-else statements). If the player's choice is the same as the computer's choice, the game is tied, and the result is displayed as "It's a tie!" in the result paragraph element using the innerHTML property of the document object.
+
+If the player's choice is 'snake', another set of conditional statements is used to determine whether the player wins or loses based on the computer's choice. If the computer's choice is 'water', the player wins (because snakes drink water), and the result is displayed accordingly. If the computer's choice is 'gun', the player loses (because guns can shoot snakes), and the result is displayed accordingly.
+
+Similar conditional statements are used for the other weapon choices ('water' and 'gun').
+
+Overall, this implementation of the "Snake Water Gun" game allows the player to select their weapon using buttons and -->
+    <main>
+      <h2>sankae water gun game</h2>
+      <h3>choose the whepon:</h3>
+      <button onclick="play('sanke')" >snake</button>
+      <button onclick="play('water')">water</button>
+      <button onclick="play('gun')">gun</button>
+      <p id="result"></p>
+    </main>
+    <script>
+        function play(playerChoice){
+            const choices = ['sanke','water','gun'];
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            if(playerChoice === computerChoice){
+                document.getElementById("result").innerHTML = "The game Is Tie";
+            }
+            else if(playerChoice === 'sanke')
+            {
+              if(computerChoice === 'water'){
+                document.getElementById("result").innerHTML = "YOU WIN 'SNAKE DRINKS WATER'";
+              }  else{
+                document.getElementById("result").innerHTML = "YOU LOST'GUN SHOOT SNAKE'";
+              }
+            }
+            else if(playerChoice === 'water')
+            {
+              if(computerChoice === 'gun'){
+                document.getElementById("result").innerHTML = "YOU WIN 'water rested gun'";
+              }  else{
+                document.getElementById("result").innerHTML = "YOU LOST'sanake drink water'";
+              }
+            }
+            else if(playerChoice === 'gun')
+            {
+              if(computerChoice === 'snake'){
+                document.getElementById("result").innerHTML = "YOU WIN 'gun shoot the snake'";
+              }  else{
+                document.getElementById("result").innerHTML = "YOU LOST'water rested gun'";
+              }
+            }
+        }
+    </script>
+</body>
+</html>

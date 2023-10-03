@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+        <style>
+            .dark_mode {
+                background: blue;
+            }
+
+            .light-mode {
+                background: yellow;
+            }
+
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <span class="fa-solid fa-moon"></span>
+        <h1>Durgesh Jadhav</h1>
+        <br>
+        <br>
+        <br>
+        <img src="img/moon.jpg" alt="" class="moon">
+
+
+        <script>
+            let icon = document.querySelector('.fa-moon');
+            icon.addEventListener('click', function () {
+                document.body.classList.toggle('dark_mode');
+
+                if (document.body.classList.contains('dark_mode')) {
+                    icon.classList.remove("fa-moon");
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.add("fa-moon");
+                    icon.classList.remove('fa-sun');
+                }
+            })
+
+            let moon = document.querySelector('.moon');
+
+            moon.addEventListener('click', function () {
+                document.body.classList.toggle('light-mode')
+                if (document.body.classList.contains('light-mode')) {
+                    moon.src = "img/sun.jpg"
+                } else {
+                    moon.src = "img/moon.jpg"
+                }
+
+            })
+
+
+        </script>
+
+
+    </body>
+
+</html>

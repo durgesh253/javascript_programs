@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Perform some asynchronous operation, such as fetching data from an API
+    // For this example, we'll just use a setTimeout function to simulate an API call
+    setTimeout(() => {
+      
+      $('manifest.json', function(data){
+        console.log(data);
+
+      }) 
+    },3000)// If data is successfully fetched, resolve the Promise with the data
+       // Wait 2 seconds before resolving or rejecting the Promise
+  });
+}
+
+// Call the Promise function and handle the results
+fetchData()
+  .then((result) => {
+    console.log("Data fetched successfully:", data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
+ 
+    </script>
+    
+</body>
+</html>

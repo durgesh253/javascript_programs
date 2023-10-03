@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: orangered;
+        }
+    </style>
+    <script>
+        function check_number(){
+            let fname = document.getElementById("fname").value;
+
+            if (fname == "" || fname == null){
+                document.getElementById("msg").innerHTML = "enter your name";
+                return false;
+            }
+        }
+        function check_number_valid(){
+            let fname = document.getElementById("fname").value;
+            let not_valid_num = /^[a-zA-z]*$/;
+
+            if (not_valid_num.test(fname))
+            {
+                document.getElementById("msg").innerHTML = "   ";
+                return false;
+            }
+            else{
+                document.getElementById("msg").innerHTML = "Number not Allowd";
+                return false;
+
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <form action="" name="form1">
+        <input type="text"
+        name=" "
+        id="fname"
+        onkeyup="return check_number_valid()"
+        
+        >
+        
+     
+   
+    <span id="msg"></span>
+    <br><br>
+    <button onclick="return check_number()">Click Here</button>
+</form>
+</body>
+</html>

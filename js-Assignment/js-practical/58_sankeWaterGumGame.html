@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Snake Water Gun Game</title>
+  </head>
+  <body>
+    <h1>Snake Water Gun Game</h1>
+    <p>Choose your weapon:</p>
+    <button onclick="play('snake')">Snake</button>
+    <button onclick="play('water')">Water</button>
+    <button onclick="play('gun')">Gun</button>
+    <p id="result"></p>
+
+    <script>
+      function play(playerChoice) {
+        const choices = ['snake', 'water', 'gun'];
+        const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+        
+        if (playerChoice === computerChoice) {
+          document.getElementById('result').innerHTML = "It's a tie!";
+        } else if (playerChoice === 'snake') {
+          if (computerChoice === 'water') {
+            document.getElementById('result').innerHTML = "You win! Snake drinks water.";
+          } else {
+            document.getElementById('result').innerHTML = "You lose! Gun shoots snake.";
+          }
+        } else if (playerChoice === 'water') {
+          if (computerChoice === 'gun') {
+            document.getElementById('result').innerHTML = "You win! Gun is rusted by water.";
+          } else {
+            document.getElementById('result').innerHTML = "You lose! Snake drinks water.";
+          }
+        } else if (playerChoice === 'gun') {
+          if (computerChoice === 'snake') {
+            document.getElementById('result').innerHTML = "You win! Gun shoots snake.";
+          } else {
+            document.getElementById('result').innerHTML = "You lose! Gun is rusted by water.";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

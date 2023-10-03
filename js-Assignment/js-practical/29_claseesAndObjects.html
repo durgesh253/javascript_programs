@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // use multiple method in class
+        class studenform{
+            submit()
+            {
+                alert(this.name + "form has been submited" + this.rollno)
+            }
+            cancel(){
+                document.write("your form has been canceled")
+            }
+            remove(){
+                alert("your form has been removed");
+            }
+            fill(givname,rollno){
+                this.name = givname;
+                this.rollno = rollno;
+            }
+        }
+        
+        let durgesh =  new studenform();
+        durgesh.fill("durgeh jadahv",27399)
+        let sanket =  new studenform("sanket pawar" , 73793);
+
+        durgesh.submit();
+        sanket.submit();
+        durgesh.cancel();
+        sanket.remove();
+
+    </script>
+    
+</body>
+</html>

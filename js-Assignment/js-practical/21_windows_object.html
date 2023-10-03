@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function alert_pop(){
+            alert("Hello Durgesh")
+        }
+        function Confirm_pop(){
+            if(confirm("are you shure"== true)){
+                document.body.style.backgroundColor = "red";
+                
+            }
+            else{
+                document.body.style.backgroundColor = "blue";
+            }
+        }
+        function prompt_pop(){
+            var user = prompt("Enter Name:");
+            if (user == ""){
+                alert("enter user name")
+            }
+            else{
+                document.getElementById("head").innerHTML = user;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id=" " onclick="alert_pop()">Alert</button>
+    <button id="" onclick="Confirm_pop()">Confirm</button>
+    <button id="" onclick="prompt_pop()">prompt</button>
+    <span id="head"></span>
+    
+</body>
+</html>

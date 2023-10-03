@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: orangered;
+        }
+        
+    </style>
+    <script>
+        function check_detail(){
+            let male = document.getElementById("male").checked;
+            let female = document.getElementById("female").checked;
+
+            if(male== false && female == false ){
+                document.getElementById("msg").innerHTML = "Enter Gender";
+                return false;
+            }
+            let c1 = document.getElementById("c1").checked;
+            let c2 = document.getElementById("c2").checked;
+            let c3 = document.getElementById("c3").checked;
+
+            if(c1 == false && c2==false && c3==false){
+                document.getElementById("msg1").innerHTML = "Pless Fill Hobbies";
+                return false;
+            }
+            var city = document.getElementById("city").value;
+              
+            if (city.selectedIndex == -1) {
+             alert("Please enter your course.");
+             city.focus();
+            return false;
+    }
+            }
+        
+    </script>
+</head>
+<body>
+    <form action="" name="form1">
+    Gender :
+    <input type="radio" name="gen" id="male"> male
+    <input type="radio" name="gen" id="female">female
+    <span id="msg"></span>
+    <br><br>
+
+    hobbies:
+    <input type="checkbox" name="" id="c1">playing
+    <input type="checkbox" name="" id="c2">singing
+    <input type="checkbox" name="" id="c3">Gaming
+    <span id="msg1"></span>
+    <br><br>
+
+    cityes:
+    <select type="text" name="city" id="city">
+        <option value="-1">---select---</option>
+        <option value="">Surat</option>
+        <option value="">Mumbai</option>
+        <option value="">Pune</option>
+        <option value="">Bangluru</option>
+        
+    </select>
+    <span id="ms2"></span>
+    <br><br>
+    <button type="submit" onclick="return check_detail()" >Click Here</button>
+</form>
+</body>
+</html>

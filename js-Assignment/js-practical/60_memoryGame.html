@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memory Game</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+    .game-board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  font-size: 50px;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card.flipped {
+  background-color: white;
+  border: 2px solid black;
+}
+
+</style>
+<body>
+  <h1>Memory Game</h1>
+  <div class="game-board"></div>
+  <script>
+    const cardsArray = [  { name: 'diamond', img: 'C:\Users\Admin\OneDrive\Desktop\websitse' },  { name: 'paper-plane', img: 'C:\Users\Admin\OneDrive\Desktop\websitse' },  { name: 'anchor', img: 'C:\Users\Admin\OneDrive\Desktop\websitse' },  { name: 'bolt', img: 'img/bolt.png' },  { name: 'cube', img: 'img/cube.png' },  { name: 'leaf', img: 'img/leaf.png' },  { name: 'bicycle', img: 'img/bicycle.png' },  { name: 'bomb', img: 'C:\Users\Admin\OneDrive\Desktop\websitse' }];
+
+let cardsChosen = [];
+let cardsChosenId = [];
+let cardsWon = [];
+
+const gameBoard = document.querySelector('.game-board');
+
+function createBoard() {
+  for (let i = 0; i < cardsArray.length; i++) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.dataset.id = i;
+    card.addEventListener('click', flipCard);
+    gameBoard.appendChild(card);
+  }
+}
+
+function flipCard() {
+  const cardId = this.dataset.id;
+  this.classList.add('flipped');
+  cardsChosen.push(cardsArray[cardId].name);
+  cardsChosenId.push(cardId);
+  if (cardsChosen.length === 2) {
+    setTimeout(checkForMatch, 500);
+  }
+}
+
+function checkForMatch() {
+  const cards = document.querySelectorAll('.card');
+  const firstCardId = cardsChosenId[0];
+  const secondCardId = cardsChosenId[1];
+  if (cardsChosen[0] === cardsChosen[1]) {
+    cards[firstCardId].removeEventListener('click', flipCard);
+    cards[secondCardId].removeEventListener('click', flipCard);
+    cardsWon.push(cardsChosen);
+  } else {
+    cards[firstCardId].classList.remove('flipped');
+    cards[secondCardId].classList.remove('flipped');
+  }
+  cardsChosen = [];
+  cardsChosenId = [];
+  if (cardsWon.length === cardsArray.length / 2) {
+    alert('Congratulations! You won the game!');
+  }
+}
+
+createBoard();
+
+  </script>
+  
+</body>
+</html>

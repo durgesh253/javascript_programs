@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to be executed repeatedly
+function sayHello() {
+ document.write('Hello!');
+}
+
+// Call the function every 2 seconds (2000 milliseconds)
+const time = setInterval(sayHello, 100);
+setTimeout(function(){
+    clearInterval(time)
+},2000)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="counting">
+      
+
+    </div>
+    <div id="counting1">
+
+    </div>
+    <div class="counting3">
+
+    </div>
+    <script>
+      var count = setInterval(check_number, 12);
+      
+      var start_num = 1;  	
+      var start_num1 = 501;
+      var start_num3 = 1001
+
+      function check_number(){
+        let num = document.getElementById("counting");
+        num.innerHTML = ++start_num;
+
+        if(start_num == 1000){
+            clearInterval(count);
+        }
+        let num1 = document.getElementById("counting1");
+        num1.innerHTML = ++start_num1;
+        if(start_num1 == 1500){
+          clearInterval(count);
+        }
+      }
+    </script>
+</body>
+</html>

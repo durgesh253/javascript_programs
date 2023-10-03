@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hero{
+            background-image: url(../websitse/images/img9.jpg);
+            height: 100vh;
+            width: 100%;
+            color: white;
+            background-position: center;
+
+        }
+        .hero .baner{
+            text-align: center;
+            color: rgb(129, 10, 139);
+            padding: 300px;
+        }
+        .hero .baner h1{
+            font-family: monospace;
+            font-size: 45px;
+            font-weight: 900;
+            padding-bottom: 20px;
+        }
+        .baner .btn{
+            padding: 10px 30px;
+            background-color: transparent;
+            color: rgb(10, 4, 1);
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 20px;
+        
+
+        }
+        .modal-overlay{
+            position: fixed;
+            top: 0;
+           left: 0;
+            width: 100%;
+             height: 100%;
+            background: rgba(73, 166, 233, 0.5);
+           display: grid;
+            place-items: center;
+         transition: 1s ease all;
+          visibility: hidden;
+          z-index: -10;
+        }
+        .open-modal {
+           visibility: visible;
+           z-index: 10;
+}
+.modal-container {
+  background: white;
+  border-radius: var(--radius);
+  width: 90vw;
+  height: 30vh;
+  max-width: var(--fixed-width);
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  color: brown;
+}
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-red-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="baner">
+            <h1>Modal Project</h1>
+            <button class="btn btn-modal">open Modal</button>
+        </div>
+       <!-- 
+        moadal
+        -->
+        <div class="modal-overlay">
+            <div class="modal-container">
+                <h3>Modal Content</h3>
+                <button class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // select modal-btn,modal-overlay,close-btn
+// listen for click events on modal-btn and close-btn
+// when user clicks modal-btn add .open-modal to modal-overlay
+// when user clicks close-btn remove .open-modal from modal-overlay
+
+    const modalbtn = document.querySelector(".btn-modal");
+    const modal    = document.querySelector(".modal-overlay");
+    const clsbtn   = document.querySelector(".close-btn");
+
+
+    modalbtn.addEventListener("click",function(){
+        modal.classList.add("open-modal");
+
+    });
+     clsbtn.addEventListener("click",function(){
+        modal.classList.remove("open-modal");
+     });
+    </script>
+</body>
+</html>

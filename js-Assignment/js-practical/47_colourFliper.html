@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        nav {
+  background: rgb(213, 223, 223);
+  height: 3rem;
+  display: grid;
+  align-items: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.nav-center {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-center h4 {
+  margin-bottom: 0;
+ color: rgb(145, 13, 13);
+}
+.nav-links {
+  display: flex;
+}
+nav a {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(255, 0, 0);
+  letter-spacing: var(--spacing);
+  margin-right: 1rem;
+}
+nav a:hover {
+  color: var(--clr-primary-5);
+}
+.container{
+  text-align: center;
+  padding: 150px;
+}
+.container h2{
+  font-size: 50px;
+  padding-bottom: 70px;
+}
+.container .btn{
+  padding: 10px 40px;
+  
+}
+button{
+  padding: 10px 30px;
+  background-color: aliceblue transparent;
+  color: black;
+  
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-center">
+            <h1 style="color: rgb(17, 1, 245);">Colour Fliper</h1>
+              <ul class="nav-links">
+                <li>
+                    <a href="./47_colourFliper.html" >Simple</a>
+                </li>
+                <li>
+                    <a href="./48_hex.html">Hex</a>
+                </li>
+              </ul>
+        </div>
+    </nav>
+    <main>
+      <div class="container">
+        <h2 style="background-color: rgba(0, 0, 0, 0.781); color: white;">backgrond Colour: <span class="color">#f1f5f8</span></h2>
+        <button onclick="changeColor()">Change Color</button>
+
+        
+
+      </div>
+    </main>
+    <script>
+function changeColor() {
+  const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.backgroundColor = randomColor;
+}
+
+    </script>
+</body>
+</html>

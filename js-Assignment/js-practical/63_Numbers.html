@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+=============== 
+Numbers 
+===============
+*/
+
+section {
+  padding: 5rem 0;
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 992px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+article {
+  background: var(--white);
+  padding: 1rem 2rem;
+  border-radius: var(--borderRadius);
+  border-bottom: 4px solid transparent;
+}
+
+article span {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+article p {
+  margin: 0;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+article:nth-of-type(1) {
+  border-bottom-color: #f59e0b;
+}
+article:nth-of-type(2) {
+  border-bottom-color: #14b8a6;
+}
+article:nth-of-type(3) {
+  border-bottom-color: #a855f7;
+}
+    </style>
+</head>
+<body>'
+    <section>
+    <!-- First Line -->
+    <article>
+        <span class="Number" data-value="500">0</span>
+        <p>Succesed Project</p>
+    </article>
+    <!-- Second line -->
+    <article>
+        <span class="Number" data-value="1740">0</span>
+        <p>worling Hours Spent</p>
+    </article>
+     <!-- third line -->
+     <article>
+        <span class="Number" data-value="1500">0</span>
+        <p>Happy Clients</p>
+
+     </article>
+    </section>
+    <script>
+     const items = document.querySelectorAll('.Number');
+
+items.forEach((item) => {
+  const value = parseInt(item.dataset.value);
+  const increment = Math.ceil(value / 1000);
+  let initialValue = 0;
+
+  const increaseCount = setInterval(() => {
+    initialValue += increment;
+
+    if (initialValue > value) {
+      item.textContent = `${value}+`;
+      clearInterval(increaseCount);
+      return;
+    }
+
+    item.textContent = `${initialValue}+`;
+  }, 10);
+});
+
+    </script>
+</body>
+</html>

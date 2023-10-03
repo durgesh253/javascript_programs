@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .video-container video{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            z-index: -2;
+        
+
+            
+        }
+        .video-container{
+            min-height: 100vh;
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+        h1{
+            /* position: absolute; */
+            color: white;
+            font-weight: 900;
+            font-size: 50px;
+        }
+        .video-container::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .btn-switch{
+            position: absolute;
+            bottom: 7%;
+           left: 7%;
+           width: 7rem;
+           height: 2rem;
+           display: flex;
+           border-radius: 10px;
+           align-items: center;
+           justify-content: space-around;
+           border: none;
+          transition: 1s ease all;
+        } 
+        .btn-switch span{
+            display: inline-block;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: black;
+        }
+        .switch {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--clr-primary-5);
+  border-radius: var(--radius);
+  margin: 0;
+  display: block;
+  transition: var(--transition);
+}
+.slide .switch {
+  left: 50%;
+}
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video  muted autoplay muted loop>
+            <source src="./video1.mp4">
+           
+        </video>
+        <h1>Best Gaming Performance</h1>
+        <button class="btn-switch" onclick=" return togglePlayPause()">
+      click here
+            
+        </button>
+      
+    </div>
+    <script>
+    const video = document.getElementsByClassName(".video-container");
+		const btnswitch = document.getElementsByClassName(".btn-switch");
+
+		function togglePlayPause() {
+			if (video.paused) {
+				video.play();
+				btnswitch.innerText = "Pause";
+			} else {
+				video.pause();
+				btnswitch.innerText = "Play";
+                return false;
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+    

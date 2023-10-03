@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: blue;
+        }
+
+    </style>
+    <script>
+        function check_number(){
+
+            let mno = document.getElementById("mno").value;
+
+            if (mno == ""){
+                document.getElementById("msg").innerHTML = "Enter mobile number";
+                return false;
+            }
+        
+        }
+        function check_mobile_lenght(){
+            let mno = document.getElementById("mno").value;
+
+            if (mno.lenght  < 10){
+                document.getElementById("msg1").innerHTML = "mobile number must be 10 digits";
+                return false;
+            }
+            else {
+                document.getElementById("msg1").innerHTML = "";
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="form1">
+        mobile number:
+        <input type="number"
+          name=""
+          id="mno"
+         maxlength="10" 
+          onblur="return check_mobile_lenght()"
+          > 
+          <span id="msg"></span>
+          <span id="msg1"></span>
+          <br><br>
+          <button type="submit" onclick="return check_number()">click Here</button>
+
+    </form>
+</body>
+</html>

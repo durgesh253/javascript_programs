@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* section */
+        .section {
+  padding: 5rem 0;
+}
+
+.countdowm{
+  width: 90vw;
+  margin: 5rem auto;
+  max-width: 1170px;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+        /*
+      =============== 
+         Countdown Timer
+       ===============
+*/
+.gift-img img {
+  margin-bottom: 2rem;
+  height: 500px;
+  width: 500px;
+}
+.gift-info h3 {
+  text-transform: uppercase;
+  color: var(--clr-primary-3);
+}
+.gift-info p {
+  color: var(--clr-grey-6);
+}
+.date {
+  color: var(--clr-grey-5);
+  font-size: 0.85rem;
+}
+img {
+  display: block;
+}   
+@media screen and (min-width: 992px) {
+  .countdowm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 3rem;
+    width: 95vw;
+  }
+  .gift-img {
+    margin-bottom: 0;
+  }
+}
+.gift-info p {
+  margin: 2rem 0;
+}
+.deadline {
+  display: flex;
+}
+.deadline-format {
+  background: rgba(0, 0, 0, 0.514);
+  color: white;
+  margin-right: 1rem;
+  width: 7rem;
+  height: 7rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.deadline-format span{
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  color: white;
+}
+.deadline h4:not(.expired) {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: var(--spacing);
+}
+.gift-info h3{
+    color: blueviolet;
+    font-size: 45px;
+    font-weight: 700;
+}
+h6{
+    color: rgb(77, 43, 109);
+}
+p{
+    color: gray;
+}
+.deadline-format h4{
+    color: white;
+}
+.gift-info h4{
+    font-size: 22px;
+
+}
+.gift-info p{
+    color: gray;
+    font-size: 20px;
+}
+    </style>
+</head>
+<body>
+    <section class="countdowm">
+        <div class="gift-img">
+            <img src="../websitse/car3.jpg" alt="">
+
+        </div>
+        <div class="gift-info">
+            <h3>Old Car Giveway</h3>
+           <h4 class="giveaway"> Giveaway Ends On Saturday, 8 April 2023 11:30am</h4>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas et magnam error similique harum quod 
+            nemo sed officiis veritatis assumenda velit facere excepturi, dolorem, necessitatibus tempora 
+            aspernatur optio vero repudiandae.</p>
+    
+        <div class="deadline">
+            <!-- days -->
+            <div class="deadline-format">
+              <div>
+                <h4 class="days">34</h4>
+                <span style="color: white;">days</span>
+              </div>
+            </div>
+            <!-- end of days -->
+            <!-- days -->
+            <div class="deadline-format">
+              <div>
+                <h4 class="hours">34</h4>
+                <span style="color: white;">hours</span>
+              </div>
+            </div>
+            <!-- end of days -->
+            <!-- minutes -->
+            <div class="deadline-format">
+              <div>
+                <h4 class="minutes">34</h4>
+                <span style="color: white;">mins</span>
+            </div>
+              </div>
+            
+            <!-- end of days -->
+            <!-- minutes -->
+            <div class="deadline-format">
+              <div>
+              
+                <h4 class="seconds">34</h4>
+                <span style="color: white;">secs</span>
+                
+              </div>
+            </div>
+            <!-- end of days -->
+          </div>
+              
+            </div>
+        
+
+    </section>
+    <script>
+       const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+const weekdays = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+
+const giveaway = document.querySelector(".giveaway");
+
+let futuredate = new Date(2023, 5, 11, 24, 30, 15);
+console.log(futuredate);
+
+
+const year = futuredate.getFullYear();
+const hours = futuredate.getHours();
+const minutes = futuredate.getMinutes();
+
+giveaway.textContent = "givwaway wnds on" + year +" " + hours + " " + minutes; 
+
+    </script>
+</body>
+</html>

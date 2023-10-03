@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q & A</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- extra fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="questions">
+        <!-- title -->
+        <div class="title">
+        <h1>genral questions</h1>
+    </div>
+    <!-- questions -->
+    <div class="section-center">
+        <article class="questions">
+            <div class="question-title">
+                <p>Do You Accept All Major Credit Cards?</p>
+                <button type="button" class="question-btn">
+                    <span class="plus-btn">
+                        <i class="fa-light fa-plus"></i>
+                    </span>
+                    <span class="minus-btn">
+                        <i class="fa-light fa-minus"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- question Answer -->
+            <div class="question-answer">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Reprehenderit <br>
+                    libero molestiae amet accusamus optio,
+                     laudantium voluptatibus quaerat dolore ex maiores possimus illo, <br>
+                    dolor ratione asperiores est recusandae, consectetur ipsum voluptates?
+                </p>
+            </div>
+
+        </article>
+        <!-- second -->
+        <article class="questions">
+            <div class="question-title">
+                <p>Do You Accept All Major Credit Cards?</p>
+                <button type="button" class="question-btn">
+                    <span class="plus-btn">
+                        <i class="fa-light fa-plus"></i>
+                    </span>
+                    <span class="minus-btn">
+                        <i class="fa-light fa-minus"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- question Answer -->
+            <div class="question-answer">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Reprehenderit <br>
+                    libero molestiae amet accusamus optio,
+                     laudantium voluptatibus quaerat dolore ex maiores possimus illo, <br>
+                    dolor ratione asperiores est recusandae, consectetur ipsum voluptates?
+                </p>
+            </div>
+
+        </article>
+        <!-- third -->
+        <article class="questions">
+            <div class="question-title">
+                <p>Do You Accept All Major Credit Cards?</p>
+                <button type="button" class="question-btn">
+                    <span class="plus-btn">
+                        <i class="fa-light fa-plus"></i>
+                    </span>
+                    <span class="minus-btn">
+                        <i class="fa-light fa-minus"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- question Answer -->
+            <div class="question-answer">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Reprehenderit <br>
+                    libero molestiae amet accusamus optio,
+                     laudantium voluptatibus quaerat dolore ex maiores possimus illo, <br>
+                    dolor ratione asperiores est recusandae, consectetur ipsum voluptates?
+                </p>
+            </div>
+
+        </article>
+    </div>
+
+
+    </section>
+    <!-- javascript -->
+    <script>
+        //using selectors inside the element
+const questions = document.querySelectorAll(".questios");
+
+questions.forEach(function (question) {
+  const btn = question.querySelector(".question-btn");
+  // console.log(btn);
+
+  btn.addEventListener("click", function () {
+    // console.log(question);
+
+    questions.forEach(function (item) {
+      if (item !== question) {
+        item.classList.remove("show-text");
+      }
+    });
+
+    question.classList.toggle("show-text");
+  });
+});
+
+// traversing the dom
+// const btns = document.querySelectorAll(".question-btn");
+
+// btns.forEach(function (btn) {
+//   btn.addEventListener("click", function (e) {
+//     const question = e.currentTarget.parentElement.parentElement;
+
+//     question.classList.toggle("show-text");
+//   });
+// });
+    </script>
+  </body>
+</html>

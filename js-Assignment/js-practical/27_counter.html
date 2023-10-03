@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .counter{
+            padding: 20px;
+            border: 3px solid green;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            color: white;
+            background-color: black ;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="counter"></div>
+    <script>
+        let count = setInterval(check_num, 50);
+        let sart_num = 500;
+
+        function check_num(){
+            let num= document.querySelector(".counter");
+            num.innerHTML = ++sart_num;
+
+            if(sart_num == 1000){
+                clearInterval(count);
+            }
+        }
+    </script>
+</body>
+</html>

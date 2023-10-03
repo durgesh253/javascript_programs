@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- slice() method -->
+    <h5>Slice Method </h5>
+    <p id="demo1"></p>
+
+    <h5>subsring method</h5>
+    <p id="demo2"></p>
+
+    <h5>Substr Method</h5>
+    <p id="demo3"></p>
+
+    <h5>Replace string</h5>
+    <p id="demo4">I love Photography</p>
+
+    <h5>ReplaceAll method</h5>
+    <p id="demo5"></p>
+
+
+    <script>
+        let text  = "instagram, Whatsapp, github"
+        let part = text.slice(5,15);
+        // javascript count poistion from 0(Zero)
+
+        document.getElementById('demo1').innerHTML = part;
+
+        // javascript substing()
+
+        let text2 = "instagram, Whatsapp, github"
+        document.getElementById('demo2').innerHTML = text2.substring(7);
+
+        // javascript substr()
+        let text3 = "instagram, Whatsapp, github"
+        document.getElementById('demo3').innerHTML = text3.substr(-4);
+
+        // javascript Text Replace
+
+        let text4 = document.getElementById('demo4').innerHTML;
+
+        document.getElementById('demo4').innerHTML = text4.replace("Photography","Coding")
+
+        
+    </script>
+</body>
+</html>

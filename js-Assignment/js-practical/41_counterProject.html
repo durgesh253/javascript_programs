@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+	<style type="text/css">
+		button {
+			padding: 10px;
+			margin: 10px;
+			font-size: 20px;
+		}
+		.counter{
+			text-align: center;
+			padding: 50px;
+			background-color: cornflowerblue;
+		}
+		#count{
+			font-size: 40px;
+		}
+		.green{
+			color: green;
+		}
+		.red{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="counter">
+	<h1>Counter</h1>
+	<p id="count">0</p>
+	<button onclick="increment()" class="green">Increse</button>
+	<button onclick="decrement()" class="red">Decrese</button>
+	<button onclick="reset()">Reset</button>
+	</div>
+
+	<script type="text/javascript">
+		let count = 0;
+		const countEl = document.getElementById("count");
+
+		function increment() {
+			count++;
+			 countEl.innerText = count;
+			//  countEl.className = count > 0 ? "green" : "green";
+		}
+
+		function decrement() {
+			count--;
+			countEl.innerText = count;
+			// countEl.className = count < 0 ? "red" : "red";
+		}
+
+		function reset() {
+			count = 0;
+			countEl.innerText = count;
+		}
+		if(count > 0){
+			value.style.color = "Green";
+			countEl.innerText = count;
+		}
+	</script>
+</body>
+</html>

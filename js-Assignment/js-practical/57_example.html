@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Generate a random number between 1 and 100
+const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+// Set the number of guesses to 100
+let guesses = 100;
+
+// Loop until the user guesses the correct number, or runs out of guesses
+while (guesses > 0) {
+  // Ask the user to enter their guess
+  const guess = prompt(`Guess the number (1-100). You have ${guesses} guesses left.`);
+
+  // Convert the input to a number
+  const guessNumber = Number(guess);
+
+  // Check if the input is a valid number between 1 and 100
+  if (isNaN(guessNumber) || guessNumber < 1 || guessNumber > 100) {
+    alert('Invalid input. Please enter a number between 1 and 100.');
+    continue; // Continue the loop without counting this guess
+  }
+
+  // Decrement the number of guesses
+  guesses--;
+
+  // Check if the guess is correct, greater, or lesser than the random number
+  if (guessNumber === randomNumber) {
+    alert(`Congratulations! You guessed the number ${randomNumber} correctly in ${100 - guesses} guesses.`);
+    break; // Exit the loop
+  } else if (guessNumber > randomNumber) {
+    alert('Your guess is greater than the number. Try again.');
+  } else {
+    alert('Your guess is lesser than the number. Try again.');
+  }
+}
+
+// If the user runs out of guesses, tell them the correct number
+if (guesses === 0) {
+  alert(`Sorry, you ran out of guesses. The correct number was ${randomNumber}.`);
+}
+
+    </script>
+    
+</body>
+</html>

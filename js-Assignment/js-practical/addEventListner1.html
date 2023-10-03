@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1  id="d" style="padding: 20px; background-color: red;">durgesh</h1>
+    <h2  id="j" style="padding: 20px; background-color: blue;">jadhav</h2>
+
+    <script>
+        document.getElementById("d").addEventListener("click" , abc);
+        
+        function abc(){
+            document.getElementById("d").style.backgroundColor = "pink"
+            
+        }
+        document.getElementById("d"),addEventListener("mouseout", function(){
+            document.getElementById("d").style.border = "10px solid green"
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+
+    <script>
+     const row = document.querySelector('.row');
+     function interface(users){
+        setTimeout(() =>{
+
+        
+      
+        for(const usersdetails of users){
+            const html = `
+            <h1>${usersdetails.name}</h1>
+            <h2>${usersdetails.email}</h2>
+            <h2>${usersdetails.address.city}</h2>
+            
+            `
+      
+
+             row.insertAdjacentHTML('afterbegin', html)
+        }
+    },5000)
+
+     }
+
+
+
+
+       fetch('https://jsonplaceholder.typicode.com/users')
+            .then((res)=> res.json())
+            .then((data)=>{
+                // console.log(data);
+                // for(var x in data){
+                //     document.write(`${data[x].name} <br>`)
+                // }
+            console.log(interface(data));
+
+            })
+            .catch((error) =>{
+                // console.log(error);
+                console.log("can't fetch Api")
+            })
+            </script>
+      
+    
+</body>
+</html>
